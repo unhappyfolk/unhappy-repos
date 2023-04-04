@@ -1,0 +1,13 @@
+{
+  "name": "grab-issue-labels",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "grab and aggregate all labels from a github repo's issues",
+  "main": "index.js",
+  "author": "mhashim6",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "octokit": "^2.0.14"
+  }
+}
