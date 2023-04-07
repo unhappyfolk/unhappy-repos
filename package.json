@@ -7,7 +7,11 @@
   "author": "mhashim6",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "fetch": "node -r dotenv/config index.js"
+  },
   "dependencies": {
+    "dotenv": "^16.0.3",
     "octokit": "^2.0.14"
   }
 }

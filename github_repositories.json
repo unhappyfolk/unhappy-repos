@@ -1,0 +1,32 @@
+{
+  "quran/quran_android": {
+    "languages": [],
+    "issues": []
+  },
+  "quran/quran-ios": {
+    "languages": [],
+    "issues": []
+  },
+  "quran/quran.com-api": {
+    "languages": [],
+    "issues": []
+  },
+  "quran/quran.com-frontend-next": {
+    "languages": [],
+    "issues": []
+  },
+
+  "sunnah-com/api": {
+    "languages": [],
+    "issues": []
+  },
+  "sunnah-com/website": {
+    "languages": [],
+    "issues": []
+  },
+
+  "nuqayah/deen-projects": {
+    "languages": [],
+    "issues": []
+  }
+}
