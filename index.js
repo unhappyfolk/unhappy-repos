@@ -45,7 +45,7 @@ const openIssuesCount = async (owner, repo) => {
 /** fetches a single page with a max of 100 issues. */
 const issuesPerPage = async (owner, repo, page) =>
   (
-    await octokit.request(`GET /repos/${owner}/${repo}/issues`, {
+    await octokit.request(`GET /repos/${owner}/${repo}/issues?q=is:issue`, {
       owner,
       repo,
       headers: {
