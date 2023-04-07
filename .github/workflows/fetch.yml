@@ -31,6 +31,10 @@ jobs:
         run: |
           yarn install --frozen-lockfile --immutable --immutable-cache --check-cache
           CI='' yarn fetch # fetch all repos issues
+      - name: setup git config
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
       - name: persist issues
         run: |
           git add github_repositories.json
