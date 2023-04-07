@@ -5,7 +5,8 @@ on:
     branches: [master]
   pull_request:
     branches: [master]
-  cron: '0 0 * * 5' # each Friday, 12 AM
+  schedule:
+    - cron: '0 0 * * 5' # each Friday, 12 AM
 
 jobs:
   build_test:
@@ -23,9 +24,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: create env file
-      run: |
-        touch .env
-        echo GH_TOKEN=${{ secrets.GITHUB_TOKEN }} >> .env
+        run: |
+          touch .env
+          echo GH_TOKEN=${{ secrets.GITHUB_TOKEN }} >> .env
       - name: yarn fetch
         run: |
           yarn install --frozen-lockfile --immutable --immutable-cache --check-cache
