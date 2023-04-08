@@ -9,8 +9,7 @@ on:
     - cron: '0 0 * * 5' # each Friday, 12 AM
 
 jobs:
-  build_test:
-    # The type of runner that the job will run on
+  rehydrate-gh-repositories:
     runs-on: ubuntu-latest
 
     strategy:
@@ -38,6 +37,6 @@ jobs:
       - name: persist issues
         run: |
           git add github_repositories.json
-          git commit -m "auto: update issues"
+          git commit --allow-empty -m "auto: update issues"
           git push origin master
 
