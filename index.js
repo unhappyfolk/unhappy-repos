@@ -45,7 +45,7 @@ const openIssuesCount = async (owner, repo) => {
 /** fetches a single page with a max of 100 issues. */
 const issuesPerPage = async (owner, repo, page) =>
   (
-    await octokit.request(`GET /repos/${owner}/${repo}/issues?q=is:issue`, {
+    await octokit.request(`GET /repos/${owner}/${repo}/issues`, {
       owner,
       repo,
       headers: {
@@ -55,7 +55,7 @@ const issuesPerPage = async (owner, repo, page) =>
       per_page: 100,
       page,
     })
-  ).data.filter((it) => it.labels.length > 0);
+  ).data.filter((it) => it.labels.length > 0 && !it["pull_request"]);
 
 const issues = async (owner, repo, issuesCount) => {
   const pagesNum = Math.ceil(issuesCount / 100);
