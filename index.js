@@ -94,6 +94,20 @@ const fetchReposIssues = async () =>
     {}
   );
 
+const fetchLabels = (owner, repo) =>
+  octokit.request(`GET /repos/${owner}/${repo}/labels`, {
+    owner,
+    repo,
+    headers: {
+      "X-GitHub-Api-Version": "2022-11-28",
+    },
+    state: "open",
+    per_page: 100,
+  });
+
+const labels = async (owner, repo) =>
+  (await fetchLabels(owner, repo)).data.map((it) => it.name);
+
 (async () => {
   saveIssues(await fetchReposIssues());
 })();
