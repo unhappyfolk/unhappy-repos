@@ -66,9 +66,11 @@ const issues = async (owner, repo, issuesCount) => {
   return (await Promise.all(pages))
     .flatMap((it) => it)
     .map((it) => ({
+      number: it.number,
       title: it.title,
       body: it.body,
       html_url: it.html_url,
+      labels: it.labels,
     }));
 };
 
